@@ -1,1 +1,773 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Material de apoio de Língua Portuguesa e Redação — Curso Preparatório Professora Samanta.">
+<title>Língua Portuguesa e Redação — Material de Apoio | Professora Samanta</title>
+<style>
+  :root{
+    --blue:#2f6e8e;
+    --blue2:#dce9ef;
+    --ink:#20262b;
+    --muted:#66727a;
+    --cream:#f7f4ec;
+    --cream2:#fffdf8;
+    --gold:#f5871f;
+    --gold2:#fff0df;
+    --green:#23834f;
+    --green2:#e8f6ee;
+    --red:#b84444;
+    --red2:#faecec;
+    --line:#d8dee2;
+    --shadow:0 14px 40px rgba(32,38,43,.08);
+    --radius:22px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:linear-gradient(180deg,#f8f6ef 0%,#fbfaf7 45%,#f3f5f6 100%);
+    color:var(--ink);
+    font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    line-height:1.58;
+  }
+  a{color:inherit}
+  .skip{position:absolute;left:-9999px}
+  .skip:focus{left:16px;top:16px;background:#fff;padding:10px 14px;border-radius:10px;z-index:99}
+  .wrap{width:min(1120px,calc(100% - 32px));margin:auto}
+  header.site{
+    background:#fffdf9;
+    border-bottom:1px solid var(--line);
+    position:sticky;top:0;z-index:20;
+    box-shadow:0 8px 24px rgba(0,0,0,.04);
+  }
+  .header-inner{min-height:94px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:14px 0}
+  .logo-link{display:flex;align-items:center;text-decoration:none;min-width:260px}
+  .logo-img{height:64px;width:auto;max-width:340px;object-fit:contain;border-radius:8px}
+  .logo-fallback{display:flex;align-items:center;gap:10px;background:#111;padding:7px 12px;border-radius:8px}
+  .fallback-mark{width:55px;height:55px;border:5px solid var(--gold);border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:38px;line-height:1;color:var(--gold);font-family:Georgia,serif}
+  .fallback-text small{display:block;font-size:10px;letter-spacing:.22em;font-weight:900;color:#111;background:var(--gold);padding:1px 7px;width:max-content;margin-left:2px}
+  .fallback-text strong{font-family:Arial,sans-serif;font-size:27px;letter-spacing:-.04em;color:#fff}
+  .header-tag{text-align:right;color:var(--muted);font-size:.76rem;text-transform:uppercase;letter-spacing:.12em;white-space:nowrap}
+  .header-tag strong{display:block;color:var(--blue);font-size:.96rem;letter-spacing:.06em;margin-top:3px}
 
+  .hero{padding:56px 0 22px}
+  .eyebrow,.kicker{display:inline-flex;align-items:center;gap:8px;background:var(--gold2);color:#9b5310;padding:7px 12px;border-radius:999px;text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;font-weight:850}
+  h1,h2,h3{font-family:Georgia,"Times New Roman",serif}
+  h1{font-size:clamp(2.15rem,4.4vw,4.1rem);line-height:1.03;letter-spacing:-.03em;margin:18px 0 16px;max-width:980px}
+  h1 em{color:var(--blue);font-style:normal}
+  .hero-sub{font-size:1.06rem;max-width:900px;color:#4e5960;margin:0}
+  .hero-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+  .meta-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:17px 16px;box-shadow:var(--shadow)}
+  .meta-card strong{display:block;font-size:1.75rem;color:var(--blue);line-height:1;margin-bottom:5px}
+  .meta-card span{font-size:.83rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+  .note{margin:24px 0 0;padding:18px 20px;background:#eef6f8;border-left:5px solid var(--blue);border-radius:16px;color:#44545d}
+
+  .tree{width:100%;height:56px;margin:12px 0 4px}
+  .section{padding:28px 0}
+  .section-title{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:18px}
+  .part{font-size:.73rem;color:var(--gold);font-weight:900;letter-spacing:.14em;text-transform:uppercase}
+  .section-title h2{font-size:2rem;line-height:1.08;margin:4px 0 0}
+  .section-title p{margin:0;color:var(--muted);max-width:620px}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .topic{background:var(--cream2);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+  .topic h3{font-size:1.35rem;margin:8px 0 10px}
+  .topic p{margin:0 0 12px;color:#4e5960}
+  .topic ul{margin:10px 0 0;padding-left:19px;color:#3d464d}
+  .topic li{margin:6px 0}
+  .icon{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:var(--blue2);font-size:1.35rem}
+  .icon.gold{background:var(--gold2)}
+  .icon.green{background:var(--green2)}
+  .icon.red{background:var(--red2)}
+  .mini-table{width:100%;border-collapse:collapse;margin-top:14px;font-size:.88rem}
+  .mini-table th,.mini-table td{padding:10px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  .mini-table th{color:var(--blue);font-size:.76rem;text-transform:uppercase;letter-spacing:.06em}
+  .highlight{background:linear-gradient(135deg,#eff5f7,#fffaf1);border:1px solid #cfdde3}
+  .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;align-items:center;margin-top:15px}
+  .flow-box{background:#fff;border:1px solid var(--line);padding:12px;border-radius:14px;text-align:center;font-weight:800;font-size:.88rem}
+  .flow-arrow{text-align:center;color:var(--gold);font-size:1.4rem;font-weight:900}
+  .example{background:#141b20;color:#edf3f5;border-radius:14px;padding:13px 15px;margin-top:14px;font-family:"SFMono-Regular",Consolas,monospace;font-size:.88rem}
+  .example b{color:#ffc17e}
+  .table-wrap{overflow-x:auto}
+
+  .quiz-intro{background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px 20px;box-shadow:var(--shadow);margin-bottom:18px}
+  .progress{height:11px;background:#e9eef0;border-radius:999px;overflow:hidden;margin-top:12px}
+  .progress-bar{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--gold));transition:width .25s}
+  .q-grid{display:grid;gap:16px}
+  .q-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px 20px 17px;box-shadow:0 7px 24px rgba(32,38,43,.045)}
+  .q-card.correct{border-color:#8fd0ad;background:#f8fffb}
+  .q-card.incorrect{border-color:#e3a5a5;background:#fffafa}
+  .q-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:10px}
+  .q-number{font-weight:900;color:var(--blue)}
+  .badge{display:inline-block;padding:5px 9px;border-radius:999px;font-size:.71rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase}
+  .easy{background:var(--green2);color:var(--green)}
+  .medium{background:#eef4fb;color:#2b5f92}
+  .hard{background:var(--red2);color:var(--red)}
+  .q-card h3{font-family:Inter,ui-sans-serif,system-ui,sans-serif;font-size:1rem;line-height:1.45;margin:0 0 12px}
+  .options{display:grid;gap:8px}
+  .option{border:1px solid #dfe5e8;border-radius:12px;padding:10px 12px;background:#fbfcfc;cursor:pointer;transition:.16s}
+  .option:hover{border-color:#a7bac3;transform:translateY(-1px)}
+  .option input{margin-right:8px;accent-color:var(--blue)}
+  .comment{display:none;margin-top:13px;padding:13px 14px;border-radius:13px;background:#f3f7f8;color:#3f4f57;font-size:.91rem}
+  .comment strong{color:var(--blue)}
+  .q-card.show .comment{display:block}
+  .q-card.show .answer-mark{display:inline-flex}
+  .answer-mark{display:none;align-items:center;gap:7px;margin-top:10px;font-size:.8rem;font-weight:850}
+  .mark-ok{color:var(--green)} .mark-no{color:var(--red)}
+  .quiz-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:22px 0}
+  button{border:0;border-radius:999px;padding:13px 18px;font-weight:850;cursor:pointer;font-size:.94rem}
+  .btn-primary{background:var(--blue);color:#fff}
+  .btn-secondary{background:#e9eef0;color:#31424b}
+  .btn-print{background:var(--gold);color:#271a0e}
+  button:hover{filter:brightness(.98);transform:translateY(-1px)}
+
+  .results{display:none;padding-top:6px}
+  .results.visible{display:block}
+  .results-hero{display:grid;grid-template-columns:180px 1fr;gap:24px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:24px;padding:25px;box-shadow:var(--shadow)}
+  .donut{width:150px;height:150px;border-radius:50%;position:relative;display:grid;place-items:center;background:conic-gradient(var(--blue) 0deg,#e7edf0 0deg)}
+  .donut:after{content:"";position:absolute;inset:24px;background:#fff;border-radius:50%}
+  .donut-center{position:relative;z-index:1;text-align:center;font-weight:900}
+  .donut-center strong{display:block;font-size:1.8rem;color:var(--blue);line-height:1}
+  .result-title h3{font-size:1.75rem;margin:0 0 6px}
+  .result-title p{margin:0;color:var(--muted)}
+  .legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:13px;font-size:.84rem;color:#59636a}
+  .dot{width:10px;height:10px;display:inline-block;border-radius:50%;margin-right:5px}
+  .blue-dot{background:var(--blue)} .gray-dot{background:#d9e0e3}
+  .analysis-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+  .analysis-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:20px;box-shadow:var(--shadow)}
+  .analysis-card h3{font-size:1.3rem;margin:0 0 10px}
+  .analysis-card p{margin:0;color:#4e5960}
+  .bars{margin-top:14px;display:grid;gap:10px}
+  .bar-row{display:grid;grid-template-columns:155px 1fr 48px;gap:9px;align-items:center;font-size:.82rem}
+  .bar-track{height:12px;background:#edf1f2;border-radius:999px;overflow:hidden}
+  .bar-fill{height:100%;width:0;background:var(--blue);transition:width .35s}
+  .study-box{margin-top:18px;background:linear-gradient(135deg,#f4f1e8,#eef5f7);border:1px solid #cfd9dd;border-radius:22px;padding:22px}
+  .study-box h3{margin:0 0 8px;font-size:1.45rem}
+  .study-list{display:grid;gap:9px;margin-top:14px}
+  .study-item{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:11px 12px}
+  .study-step{width:29px;height:29px;border-radius:50%;display:grid;place-items:center;background:var(--gold2);color:#9b5310;font-weight:900}
+  .study-item strong{display:block;margin-bottom:2px}
+  .ref-card{margin-top:20px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:20px 22px;display:flex;justify-content:space-between;align-items:center;gap:18px}
+  .ref-card h3{font-size:1.25rem;margin:0 0 4px}.ref-card p{margin:0;color:var(--muted)}
+  .ref-btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;background:#e9eef0;color:#30566b;border-radius:999px;padding:11px 16px;font-weight:850;white-space:nowrap}
+
+  .writing{background:linear-gradient(135deg,#fffaf1,#eef5f7);border:1px solid #d8dfe2;border-radius:24px;padding:24px;box-shadow:var(--shadow)}
+  .writing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:15px}
+  .prompt{background:#fff;border:1px solid var(--line);border-radius:18px;padding:17px}
+  .prompt h3{font-size:1.1rem;margin:0 0 7px;color:var(--blue)}
+  .prompt p{margin:0;color:#4c575e;font-size:.91rem}
+  .checklist{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:15px}
+  .check{background:#fff;border:1px solid var(--line);padding:10px 12px;border-radius:12px;font-size:.88rem}
+  .check:before{content:"✓";color:var(--green);font-weight:900;margin-right:8px}
+
+  .contact{margin:34px 0 0;background:#10181c;color:#eef3f4;border-radius:26px;padding:28px 30px;position:relative;overflow:hidden}
+  .contact:after{content:"";position:absolute;width:250px;height:250px;right:-90px;top:-100px;border:1px solid rgba(245,135,31,.55);border-radius:50%}
+  .contact-content{display:flex;justify-content:space-between;align-items:center;gap:24px;position:relative;z-index:1}
+  .contact small{display:block;color:#f7bc7b;text-transform:uppercase;letter-spacing:.14em;font-size:.71rem;font-weight:900;margin-bottom:7px}
+  .contact h3{font-size:1.6rem;margin:0 0 6px}.contact p{margin:0;color:#ccd6da;max-width:680px}
+  .contact-btn{display:inline-flex;align-items:center;gap:9px;background:#25D366;color:#08140c;text-decoration:none;padding:13px 18px;border-radius:999px;font-weight:900;white-space:nowrap}
+  footer{text-align:center;padding:30px 0 52px;color:#6b777d;font-size:.8rem}
+  footer strong{color:#344852}
+
+  @media(max-width:900px){
+    .hero-meta{grid-template-columns:repeat(2,1fr)}
+    .grid-2,.analysis-grid{grid-template-columns:1fr}
+    .grid-3,.writing-grid{grid-template-columns:1fr 1fr}
+    .flow{grid-template-columns:1fr 1fr}
+    .contact-content{flex-direction:column;align-items:flex-start}
+  }
+  @media(max-width:620px){
+    .wrap{width:min(100% - 22px,1120px)}
+    .header-inner{align-items:flex-start;flex-direction:column;gap:9px}.header-tag{text-align:left}.logo-img{height:58px}
+    .hero{padding-top:36px}.hero-meta,.grid-3,.writing-grid,.checklist,.flow{grid-template-columns:1fr}
+    .results-hero{grid-template-columns:1fr;justify-items:center;text-align:center}.legend{justify-content:center}.bar-row{grid-template-columns:1fr}.q-head{flex-direction:column}
+    .ref-card{flex-direction:column;align-items:flex-start}.contact{padding:23px}.contact-btn{width:100%;justify-content:center}
+  }
+  @media print{
+    header.site{position:static;box-shadow:none}.hero{padding-top:25px}.q-card{break-inside:avoid}.quiz-actions,.results,.ref-btn,.contact-btn{display:none!important}
+    body{background:#fff}.topic,.q-card,.analysis-card,.writing,.contact{box-shadow:none}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<header class="site">
+  <div class="wrap header-inner">
+    <a class="logo-link" href="https://samanta-preparatorios.github.io/Aula-1-de-Ciencias/" target="_blank" rel="noopener" aria-label="Curso Preparatório Professora Samanta">
+      <img class="logo-img" src="https://samanta-preparatorios.github.io/Aula-1-de-Ciencias/Logo%20preparatorio1.jpeg" alt="Logo Curso Preparatório Professora Samanta" onload="this.style.display='block';document.getElementById('logoFallback').style.display='none';" onerror="this.style.display='none';document.getElementById('logoFallback').style.display='flex';">
+      <span class="logo-fallback" id="logoFallback">
+        <span class="fallback-mark">S</span>
+        <span class="fallback-text"><small>PROFESSORA</small><strong>Samanta</strong></span>
+      </span>
+    </a>
+    <div class="header-tag">Material de Estudo<strong>Língua Portuguesa + Redação</strong></div>
+  </div>
+</header>
+
+<main id="conteudo" class="wrap">
+  <section class="hero">
+    <span class="eyebrow">📚 Conteúdo Programado · Revisão + Diagnóstico</span>
+    <h1>Língua Portuguesa e Redação: <em>compreender, analisar e escrever</em></h1>
+    <p class="hero-sub">Material de apoio com revisão objetiva dos conteúdos, exemplos visuais, tabelas, mapa mental, questionário diagnóstico com três níveis de dificuldade e análise automática de desempenho.</p>
+    <div class="hero-meta">
+      <div class="meta-card"><strong>6</strong><span>assuntos</span></div>
+      <div class="meta-card"><strong>18</strong><span>questões</span></div>
+      <div class="meta-card"><strong>3</strong><span>níveis por assunto</span></div>
+      <div class="meta-card"><strong>1</strong><span>estudo orientado</span></div>
+    </div>
+    <div class="note"><strong>Como usar:</strong> leia a Parte 1 antes de responder. Na Parte 2, marque apenas uma alternativa por questão. Ao clicar em <strong>Corrigir questionário</strong>, você verá o percentual de acertos, o desempenho por conteúdo, os pontos de maior facilidade e dificuldade, o gabarito comentado e uma sugestão automática de estudo.</div>
+  </section>
+
+  <svg class="tree" viewBox="0 0 980 56" preserveAspectRatio="none" aria-hidden="true">
+    <g fill="none" stroke="#2f6e8e" stroke-width="1.3" opacity=".28">
+      <line x1="490" y1="48" x2="490" y2="28"/><line x1="490" y1="28" x2="160" y2="13"/><line x1="490" y1="28" x2="325" y2="7"/><line x1="490" y1="28" x2="490" y2="5"/><line x1="490" y1="28" x2="655" y2="7"/><line x1="490" y1="28" x2="820" y2="13"/>
+    </g>
+    <g fill="#f5871f"><circle cx="490" cy="48" r="4"/><circle cx="160" cy="13" r="3.5"/><circle cx="325" cy="7" r="3.5"/><circle cx="490" cy="5" r="3.5"/><circle cx="655" cy="7" r="3.5"/><circle cx="820" cy="13" r="3.5"/></g>
+  </svg>
+
+  <section class="section">
+    <div class="section-title">
+      <div><span class="part">Parte 1</span><h2>Revisão dos principais conceitos</h2></div>
+      <p>Use as tabelas e exemplos para fazer uma leitura rápida antes do questionário.</p>
+    </div>
+
+    <div class="grid-2">
+      <article class="topic">
+        <div class="icon">🔎</div>
+        <h3>1. Interpretação de texto</h3>
+        <p>Interpretar é construir sentido a partir do que está escrito, relacionando informações explícitas e implícitas.</p>
+        <ul>
+          <li><strong>Explícito:</strong> aparece diretamente no texto.</li>
+          <li><strong>Implícito:</strong> é inferido a partir de pistas.</li>
+          <li><strong>Tema:</strong> assunto central.</li>
+          <li><strong>Finalidade:</strong> intenção comunicativa do texto.</li>
+          <li><strong>Inferência:</strong> conclusão sustentada por evidências do texto.</li>
+        </ul>
+        <div class="example"><b>Exemplo:</b> “A praça amanheceu silenciosa, e as janelas permaneceram fechadas.”<br>→ O texto não diz “estava muito cedo”, mas as pistas permitem inferir um contexto de pouco movimento.</div>
+      </article>
+
+      <article class="topic">
+        <div class="icon gold">🧩</div>
+        <h3>2. Estrutura verbal</h3>
+        <p>O verbo pode ser analisado em partes que ajudam a identificar sua formação e suas informações gramaticais.</p>
+        <table class="mini-table">
+          <tr><th>Elemento</th><th>Função</th><th>Exemplo</th></tr>
+          <tr><td>Radical</td><td>Núcleo de sentido</td><td>trist → entristecer</td></tr>
+          <tr><td>Prefixo</td><td>Antes do radical</td><td>en + trist...</td></tr>
+          <tr><td>Sufixo</td><td>Acrescentado após o radical</td><td>trist + ec + er</td></tr>
+          <tr><td>Desinência</td><td>Indica flexões</td><td>am, em “entristeceram”</td></tr>
+        </table>
+        <div class="highlight" style="padding:14px 15px;margin-top:13px"><strong>Tenha atenção:</strong> nem todo verbo apresenta prefixo ou sufixo derivacional. As desinências indicam informações como pessoa, número, tempo e modo.</div>
+      </article>
+
+      <article class="topic">
+        <div class="icon">🔗</div>
+        <h3>3. Locução verbal</h3>
+        <p>É o conjunto formado por dois ou mais verbos que funcionam juntos para expressar uma única ação ou estado.</p>
+        <div class="flow">
+          <div class="flow-box">verbo auxiliar</div><div class="flow-arrow">→</div><div class="flow-box">verbo principal</div><div class="flow-arrow">→</div><div class="flow-box">sentido verbal</div>
+        </div>
+        <div class="example"><b>Exemplos:</b><br>“vai estudar” → <em>vai</em> (auxiliar) + <em>estudar</em> (principal)<br>“estavam lendo” → <em>estavam</em> (auxiliar) + <em>lendo</em> (principal)</div>
+      </article>
+
+      <article class="topic">
+        <div class="icon gold">🧭</div>
+        <h3>4. Advérbio</h3>
+        <p>Palavra ou expressão que modifica principalmente o verbo, o adjetivo ou outro advérbio, acrescentando uma circunstância.</p>
+        <table class="mini-table">
+          <tr><th>Valor</th><th>Exemplo</th></tr>
+          <tr><td>Tempo</td><td>ontem, hoje, cedo, amanhã</td></tr>
+          <tr><td>Lugar</td><td>aqui, ali, longe</td></tr>
+          <tr><td>Modo</td><td>calmamente, bem, rapidamente</td></tr>
+          <tr><td>Intensidade</td><td>muito, pouco, bastante</td></tr>
+          <tr><td>Negação</td><td>não</td></tr>
+          <tr><td>Dúvida</td><td>talvez</td></tr>
+        </table>
+        <div class="example"><b>Dica:</b> em “Ela falou <em>calmamente</em>”, o advérbio informa <em>como</em> a ação foi realizada.</div>
+      </article>
+
+      <article class="topic">
+        <div class="icon green">🎯</div>
+        <h3>5. Complemento verbal</h3>
+        <p>É o termo que completa o sentido de um verbo transitivo.</p>
+        <div class="table-wrap">
+          <table class="mini-table">
+            <tr><th>Tipo</th><th>Como reconhecer</th><th>Exemplo</th></tr>
+            <tr><td>Objeto direto</td><td>Sem preposição exigida pelo verbo</td><td>Li <strong>o livro</strong>.</td></tr>
+            <tr><td>Objeto indireto</td><td>Com preposição exigida pelo verbo</td><td>Preciso <strong>de ajuda</strong>.</td></tr>
+            <tr><td>Dois complementos</td><td>OD + OI</td><td>Entreguei <strong>o caderno</strong> <strong>ao professor</strong>.</td></tr>
+          </table>
+        </div>
+        <div class="highlight" style="padding:14px 15px;margin-top:13px"><strong>Teste:</strong> encontre o verbo e pergunte “o quê?”, “quem?”, “de quê?”, “a quem?”, conforme a regência do verbo.</div>
+      </article>
+
+      <article class="topic">
+        <div class="icon red">🌙</div>
+        <h3>6. Contos fantásticos</h3>
+        <p>Narrativas em que acontecimentos extraordinários entram em um mundo inicialmente reconhecível, criando estranhamento, suspense ou dúvida.</p>
+        <ul>
+          <li>Ambiente e situações inicialmente plausíveis.</li>
+          <li>Entrada de um acontecimento estranho ou sobrenatural.</li>
+          <li>Atmosfera de mistério, tensão ou ambiguidade.</li>
+          <li>Reação das personagens aos fatos.</li>
+          <li>Desfecho pode explicar, manter ou ampliar a dúvida.</li>
+        </ul>
+        <div class="example"><b>Estratégia de escrita:</b> uma boa cena fantástica não precisa revelar tudo imediatamente. Pistas graduais ajudam a construir expectativa e interpretação.</div>
+      </article>
+    </div>
+
+    <article class="topic" style="margin-top:18px">
+      <h3>Mapa mental: como resolver questões de Língua Portuguesa</h3>
+      <div class="grid-3" style="margin-top:10px">
+        <div class="highlight" style="padding:15px"><strong>1. Leia para localizar</strong><br>Identifique assunto, personagens, ações e informações explícitas.</div>
+        <div class="highlight" style="padding:15px"><strong>2. Leia para relacionar</strong><br>Observe palavras, conectivos, verbos, advérbios e complementos.</div>
+        <div class="highlight" style="padding:15px"><strong>3. Leia para inferir</strong><br>Use as pistas do próprio texto antes de escolher a alternativa.</div>
+      </div>
+    </article>
+  </section>
+
+  <section class="section" id="questionario">
+    <div class="section-title">
+      <div><span class="part">Parte 2</span><h2>Questionário diagnóstico</h2></div>
+      <p>18 questões: 3 por assunto, sendo uma fácil, uma média e uma difícil.</p>
+    </div>
+    <div class="quiz-intro">
+      <strong id="answeredLabel">0 de 18 questões respondidas</strong>
+      <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+      <p style="margin:9px 0 0;color:var(--muted);font-size:.88rem">Você pode alterar as respostas antes da correção.</p>
+    </div>
+
+    <form id="quizForm" class="q-grid">
+      <!-- INTERPRETAÇÃO -->
+      <article class="q-card" data-topic="Interpretação de texto" data-difficulty="Fácil" data-answer="B" data-explanation="O foco principal é mostrar que o silêncio chama a atenção do narrador e transforma uma situação aparentemente comum em algo significativo. A alternativa B resume melhor o sentido global do trecho.">
+        <div class="q-head"><div class="q-number">Questão 1</div><span class="badge easy">Fácil</span></div>
+        <h3>Leia: “Quando a biblioteca fechou mais cedo, Ana percebeu que os estudantes ainda permaneciam do lado de fora, comentando a prova. O silêncio do prédio parecia destacar a ansiedade de todos.” Qual é a ideia central do trecho?</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q1" value="A">A) A biblioteca precisava de mais funcionários.</label>
+          <label class="option"><input type="radio" name="q1" value="B">B) O silêncio do lugar contrasta com a expectativa dos estudantes.</label>
+          <label class="option"><input type="radio" name="q1" value="C">C) Ana preferia estudar do lado de fora da biblioteca.</label>
+          <label class="option"><input type="radio" name="q1" value="D">D) A prova havia sido cancelada pelos estudantes.</label>
+        </div>
+        <div class="answer-mark"></div><div class="comment"></div>
+      </article>
+
+      <article class="q-card" data-topic="Interpretação de texto" data-difficulty="Média" data-answer="C" data-explanation="O texto informa que Pedro voltou porque esqueceu o caderno. O fato de sentir alívio mostra que ele provavelmente precisava do material para realizar a tarefa, inferência sustentada pela relação entre o esquecimento e a volta.">
+        <div class="q-head"><div class="q-number">Questão 2</div><span class="badge medium">Média</span></div>
+        <h3>“Pedro já estava no portão quando voltou correndo para casa. Tinha esquecido o caderno de atividades e, ao encontrá-lo sobre a mesa, respirou aliviado.” É possível inferir que Pedro:</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q2" value="A">A) não pretendia participar da aula.</label>
+          <label class="option"><input type="radio" name="q2" value="B">B) perdeu o horário de saída.</label>
+          <label class="option"><input type="radio" name="q2" value="C">C) precisava do caderno para cumprir alguma atividade.</label>
+          <label class="option"><input type="radio" name="q2" value="D">D) queria entregar o caderno a um amigo.</label>
+        </div>
+        <div class="answer-mark"></div><div class="comment"></div>
+      </article>
+
+      <article class="q-card" data-topic="Interpretação de texto" data-difficulty="Difícil" data-answer="D" data-explanation="A expressão “não por obrigação, mas por respeito” constrói uma oposição entre cumprir uma regra e reconhecer o valor das pessoas. Assim, o trecho sugere uma crítica a atitudes mecânicas, defendendo uma postura consciente.">
+        <div class="q-head"><div class="q-number">Questão 3</div><span class="badge hard">Difícil</span></div>
+        <h3>“Marcos abriu espaço para a senhora passar, não por obrigação, mas por respeito. O gesto simples fez com que os demais também mudassem de atitude.” Qual interpretação melhor explica o efeito do trecho?</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q3" value="A">A) O narrador afirma que apenas pessoas idosas merecem respeito.</label>
+          <label class="option"><input type="radio" name="q3" value="B">B) O gesto de Marcos foi visto como uma forma de desobedecer às regras.</label>
+          <label class="option"><input type="radio" name="q3" value="C">C) A situação demonstra que todos os passageiros conheciam Marcos.</label>
+          <label class="option"><input type="radio" name="q3" value="D">D) Uma atitude consciente pode influenciar o comportamento de outras pessoas.</label>
+        </div>
+        <div class="answer-mark"></div><div class="comment"></div>
+      </article>
+
+      <!-- ESTRUTURA VERBAL -->
+      <article class="q-card" data-topic="Estrutura verbal" data-difficulty="Fácil" data-answer="A" data-explanation="Em “cantamos”, cant- é o radical; a desinência -amos informa pessoa e número no contexto verbal. O item pede o núcleo de sentido do verbo, portanto “cant-” é a identificação adequada do radical.">
+        <div class="q-head"><div class="q-number">Questão 4</div><span class="badge easy">Fácil</span></div>
+        <h3>Na forma verbal <strong>“cantamos”</strong>, qual parte corresponde ao radical, isto é, ao núcleo principal de sentido?</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q4" value="A">A) cant-</label>
+          <label class="option"><input type="radio" name="q4" value="B">B) -amos</label>
+          <label class="option"><input type="radio" name="q4" value="C">C) -mos</label>
+          <label class="option"><input type="radio" name="q4" value="D">D) -a-</label>
+        </div>
+        <div class="answer-mark"></div><div class="comment"></div>
+      </article>
+
+      <article class="q-card" data-topic="Estrutura verbal" data-difficulty="Média" data-answer="B" data-explanation="Em “entristeceram”, a formação pode ser observada como en- + trist + -ec- + -eram: en- funciona como prefixo, trist é o radical, -ec- é um elemento sufixal de formação e -eram marca a flexão verbal. A alternativa B apresenta essa leitura.">
+        <div class="q-head"><div class="q-number">Questão 5</div><span class="badge medium">Média</span></div>
+        <h3>Na formação escolar de <strong>“entristeceram”</strong>, qual alternativa apresenta corretamente a identificação dos elementos destacados?</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q5" value="A">A) en- = radical; trist = prefixo; -ec- = desinência.</label>
+          <label class="option"><input type="radio" name="q5" value="B">B) en- = prefixo; trist = radical; -ec- = sufixo; -eram = desinência.</label>
+          <label class="option"><input type="radio" name="q5" value="C">C) en- = sufixo; trist = desinência; -ec- = radical.</label>
+          <label class="option"><input type="radio" name="q5" value="D">D) en- = desinência; trist = sufixo; -ec- = prefixo.</label>
+        </div>
+        <div class="answer-mark"></div><div class="comment"></div>
+      </article>
+
+      <article class="q-card" data-topic="Estrutura verbal" data-difficulty="Difícil" data-answer="C" data-explanation="A parte inicial “en-” antecede o radical “trist-”; o elemento “-ec-” participa da formação do verbo e “-eram” expressa a flexão verbal. A alternativa C é a única que preserva a função estrutural correta dos elementos apresentados.">
+        <div class="q-head"><div class="q-number">Questão 6</div><span class="badge hard">Difícil</span></div>
+        <h3>Considere o verbo <strong>“entristeceram”</strong>. Qual alternativa descreve melhor a função das partes que compõem a forma verbal?</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q6" value="A">A) O radical é “en-” e o prefixo é “trist-”.</label>
+          <label class="option"><input type="radio" name="q6" value="B">B) A desinência é “trist-” porque apresenta o sentido do verbo.</label>
+          <label class="option"><input type="radio" name="q6" value="C">C) O radical concentra o sentido lexical, enquanto os elementos acrescentados modificam a formação e a flexão do verbo.</label>
+          <label class="option"><input type="radio" name="q6" value="D">D) Todo o verbo é formado apenas pelo radical, sem elementos de formação ou flexão.</label>
+        </div>
+        <div class="answer-mark"></div><div class="comment"></div>
+      </article>
+
+      <!-- LOCUÇÃO VERBAL -->
+      <article class="q-card" data-topic="Locução verbal" data-difficulty="Fácil" data-answer="A" data-explanation="“Vai estudar” reúne o verbo “vai”, que funciona como auxiliar, e “estudar”, que apresenta a ação principal. Juntos, formam uma locução verbal.">
+        <div class="q-head"><div class="q-number">Questão 7</div><span class="badge easy">Fácil</span></div>
+        <h3>Qual alternativa apresenta uma locução verbal?</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q7" value="A">A) Os alunos <strong>vão estudar</strong> para a avaliação.</label>
+          <label class="option"><input type="radio" name="q7" value="B">B) Os alunos estudaram bastante.</label>
+          <label class="option"><input type="radio" name="q7" value="C">C) Os alunos estudam diariamente.</label>
+          <label class="option"><input type="radio" name="q7" value="D">D) Os alunos revisam o conteúdo.</label>
+        </div>
+        <div class="answer-mark"></div><div class="comment"></div>
+      </article>
+
+      <article class="q-card" data-topic="Locução verbal" data-difficulty="Média" data-answer="D" data-explanation="Em “estavam lendo”, o verbo “estavam” atua como auxiliar e “lendo” é o verbo principal, formando uma locução que apresenta a ação em desenvolvimento.">
+        <div class="q-head"><div class="q-number">Questão 8</div><span class="badge medium">Média</span></div>
+        <h3>Na frase “As crianças <strong>estavam lendo</strong> quando a luz acabou”, o conjunto destacado expressa:</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q8" value="A">A) apenas uma característica nominal.</label>
+          <label class="option"><input type="radio" name="q8" value="B">B) uma ação que nunca aconteceu.</label>
+          <label class="option"><input type="radio" name="q8" value="C">C) dois verbos independentes, sem relação entre si.</label>
+          <label class="option"><input type="radio" name="q8" value="D">D) uma locução verbal que apresenta uma ação em desenvolvimento.</label>
+        </div>
+        <div class="answer-mark"></div><div class="comment"></div>
+      </article>
+
+      <article class="q-card" data-topic="Locução verbal" data-difficulty="Difícil" data-answer="B" data-explanation="“Poderia ter terminado” apresenta mais de um verbo funcionando em conjunto: “poderia” introduz uma possibilidade, “ter” participa da construção verbal e “terminado” traz o verbo principal. Trata-se de uma construção verbal composta, não de três ações independentes.">
+        <div class="q-head"><div class="q-number">Questão 9</div><span class="badge hard">Difícil</span></div>
+        <h3>Em “A equipe <strong>poderia ter terminado</strong> o trabalho antes do prazo”, a construção verbal destacada indica:</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q9" value="A">A) três ações independentes praticadas por sujeitos diferentes.</label>
+          <label class="option"><input type="radio" name="q9" value="B">B) uma construção verbal que combina possibilidade e uma ação concluída ou considerada como concluída.</label>
+          <label class="option"><input type="radio" name="q9" value="C">C) somente um advérbio acompanhado de dois substantivos.</label>
+          <label class="option"><input type="radio" name="q9" value="D">D) uma oração sem qualquer informação de tempo ou modo.</label>
+        </div>
+        <div class="answer-mark"></div><div class="comment"></div>
+      </article>
+
+      <!-- ADVÉRBIO -->
+      <article class="q-card" data-topic="Advérbio" data-difficulty="Fácil" data-answer="C" data-explanation="“Ontem” indica quando a ação de chegar aconteceu. Por isso, exerce valor adverbial de tempo.">
+        <div class="q-head"><div class="q-number">Questão 10</div><span class="badge easy">Fácil</span></div>
+        <h3>Na frase “Lucas chegou <strong>ontem</strong>”, a palavra destacada é um advérbio de:</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q10" value="A">A) lugar.</label>
+          <label class="option"><input type="radio" name="q10" value="B">B) modo.</label>
+          <label class="option"><input type="radio" name="q10" value="C">C) tempo.</label>
+          <label class="option"><input type="radio" name="q10" value="D">D) negação.</label>
+        </div>
+        <div class="answer-mark"></div><div class="comment"></div>
+      </article>
+
+      <article class="q-card" data-topic="Advérbio" data-difficulty="Média" data-answer="A" data-explanation="“Calmamente” modifica o verbo “falou”, informando o modo como a ação foi realizada. Portanto, é um advérbio de modo.">
+        <div class="q-head"><div class="q-number">Questão 11</div><span class="badge medium">Média</span></div>
+        <h3>Em “A professora explicou a questão <strong>calmamente</strong>”, o advérbio destacado modifica principalmente:</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q11" value="A">A) o verbo “explicou”, indicando modo.</label>
+          <label class="option"><input type="radio" name="q11" value="B">B) o substantivo “questão”, indicando gênero.</label>
+          <label class="option"><input type="radio" name="q11" value="C">C) o artigo “a”, indicando quantidade.</label>
+          <label class="option"><input type="radio" name="q11" value="D">D) o sujeito, indicando lugar.</label>
+        </div>
+        <div class="answer-mark"></div><div class="comment"></div>
+      </article>
+
+      <article class="q-card" data-topic="Advérbio" data-difficulty="Difícil" data-answer="D" data-explanation="Em “O atleta treinou muito cedo”, “cedo” informa tempo e “muito” intensifica o próprio advérbio “cedo”. Assim, “muito” é advérbio de intensidade e não de quantidade do substantivo.">
+        <div class="q-head"><div class="q-number">Questão 12</div><span class="badge hard">Difícil</span></div>
+        <h3>Na frase “O atleta treinou <strong>muito cedo</strong> para a competição”, a classificação correta de “muito” e “cedo”, respectivamente, é:</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q12" value="A">A) tempo e intensidade.</label>
+          <label class="option"><input type="radio" name="q12" value="B">B) modo e lugar.</label>
+          <label class="option"><input type="radio" name="q12" value="C">C) intensidade e modo.</label>
+          <label class="option"><input type="radio" name="q12" value="D">D) intensidade e tempo.</label>
+        </div>
+        <div class="answer-mark"></div><div class="comment"></div>
+      </article>
+
+      <!-- COMPLEMENTO VERBAL -->
+      <article class="q-card" data-topic="Complemento verbal" data-difficulty="Fácil" data-answer="B" data-explanation="O verbo “explicou” é transitivo direto nesse contexto, e “o conteúdo” completa seu sentido sem preposição, funcionando como objeto direto.">
+        <div class="q-head"><div class="q-number">Questão 13</div><span class="badge easy">Fácil</span></div>
+        <h3>Na frase “A professora explicou <strong>o conteúdo</strong>”, o termo destacado é:</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q13" value="A">A) sujeito.</label>
+          <label class="option"><input type="radio" name="q13" value="B">B) objeto direto.</label>
+          <label class="option"><input type="radio" name="q13" value="C">C) objeto indireto.</label>
+          <label class="option"><input type="radio" name="q13" value="D">D) advérbio.</label>
+        </div>
+        <div class="answer-mark"></div><div class="comment"></div>
+      </article>
+
+      <article class="q-card" data-topic="Complemento verbal" data-difficulty="Média" data-answer="C" data-explanation="O verbo “precisar”, no sentido de necessitar, exige a preposição “de”. Por isso, “de atenção” é objeto indireto.">
+        <div class="q-head"><div class="q-number">Questão 14</div><span class="badge medium">Média</span></div>
+        <h3>Na frase “Os estudantes precisam <strong>de atenção</strong> durante a explicação”, o termo destacado exerce a função de:</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q14" value="A">A) objeto direto.</label>
+          <label class="option"><input type="radio" name="q14" value="B">B) sujeito.</label>
+          <label class="option"><input type="radio" name="q14" value="C">C) objeto indireto.</label>
+          <label class="option"><input type="radio" name="q14" value="D">D) predicativo do sujeito.</label>
+        </div>
+        <div class="answer-mark"></div><div class="comment"></div>
+      </article>
+
+      <article class="q-card" data-topic="Complemento verbal" data-difficulty="Difícil" data-answer="A" data-explanation="“O caderno” é aquilo que foi entregue, funcionando como objeto direto. “Ao professor” indica o destinatário e completa o verbo com a preposição a, funcionando como objeto indireto.">
+        <div class="q-head"><div class="q-number">Questão 15</div><span class="badge hard">Difícil</span></div>
+        <h3>Na oração “Entreguei <strong>o caderno</strong> <strong>ao professor</strong> antes da aula”, os termos destacados são, respectivamente:</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q15" value="A">A) objeto direto e objeto indireto.</label>
+          <label class="option"><input type="radio" name="q15" value="B">B) objeto indireto e objeto direto.</label>
+          <label class="option"><input type="radio" name="q15" value="C">C) sujeito e objeto direto.</label>
+          <label class="option"><input type="radio" name="q15" value="D">D) predicativo e advérbio.</label>
+        </div>
+        <div class="answer-mark"></div><div class="comment"></div>
+      </article>
+
+      <!-- CONTO FANTÁSTICO -->
+      <article class="q-card" data-topic="Conto fantástico" data-difficulty="Fácil" data-answer="D" data-explanation="O conto fantástico costuma partir de um ambiente reconhecível e inserir um acontecimento extraordinário, gerando estranhamento. A alternativa D apresenta essa característica essencial.">
+        <div class="q-head"><div class="q-number">Questão 16</div><span class="badge easy">Fácil</span></div>
+        <h3>Qual característica está diretamente relacionada ao conto fantástico?</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q16" value="A">A) Apresentação apenas de fatos históricos comprovados.</label>
+          <label class="option"><input type="radio" name="q16" value="B">B) Ausência total de conflito.</label>
+          <label class="option"><input type="radio" name="q16" value="C">C) Uso obrigatório de linguagem científica.</label>
+          <label class="option"><input type="radio" name="q16" value="D">D) Presença de um acontecimento estranho ou sobrenatural em uma situação inicialmente reconhecível.</label>
+        </div>
+        <div class="answer-mark"></div><div class="comment"></div>
+      </article>
+
+      <article class="q-card" data-topic="Conto fantástico" data-difficulty="Média" data-answer="B" data-explanation="O efeito do fantástico se fortalece quando o leitor percebe o estranhamento sem receber uma explicação imediata. Isso cria suspense e espaço para interpretações.">
+        <div class="q-head"><div class="q-number">Questão 17</div><span class="badge medium">Média</span></div>
+        <h3>Em um conto fantástico, um relógio parado às 3h13 começa a funcionar sozinho e sempre toca quando ninguém está olhando. O autor não explica o fenômeno de imediato. Esse recurso contribui principalmente para:</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q17" value="A">A) eliminar o suspense da narrativa.</label>
+          <label class="option"><input type="radio" name="q17" value="B">B) criar estranhamento e manter a expectativa do leitor.</label>
+          <label class="option"><input type="radio" name="q17" value="C">C) transformar o texto em uma notícia jornalística.</label>
+          <label class="option"><input type="radio" name="q17" value="D">D) apresentar um fato cotidiano sem qualquer efeito narrativo.</label>
+        </div>
+        <div class="answer-mark"></div><div class="comment"></div>
+      </article>
+
+      <article class="q-card" data-topic="Conto fantástico" data-difficulty="Difícil" data-answer="C" data-explanation="A alternativa C mantém o universo cotidiano, introduz um elemento impossível e preserva a dúvida da personagem. Esse equilíbrio entre o reconhecível e o estranho favorece o efeito fantástico.">
+        <div class="q-head"><div class="q-number">Questão 18</div><span class="badge hard">Difícil</span></div>
+        <h3>Qual continuação preserva melhor o efeito fantástico para a frase: “Ao abrir a porta do quarto, Júlia viu a própria sombra sentada na cadeira.”?</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q18" value="A">A) Júlia acendeu a luz e percebeu que tudo era apenas um casaco pendurado.</label>
+          <label class="option"><input type="radio" name="q18" value="B">B) Júlia lembrou que havia comprado uma cadeira nova naquela semana.</label>
+          <label class="option"><input type="radio" name="q18" value="C">C) Júlia piscou, aproximou-se devagar e viu a sombra levantar a cabeça, embora seu corpo permanecesse parado.</label>
+          <label class="option"><input type="radio" name="q18" value="D">D) Júlia fechou a porta porque precisava organizar o quarto antes de dormir.</label>
+        </div>
+        <div class="answer-mark"></div><div class="comment"></div>
+      </article>
+    </form>
+
+    <div class="quiz-actions">
+      <button class="btn-primary" type="button" id="gradeBtn">✓ Corrigir questionário</button>
+      <button class="btn-secondary" type="button" id="resetBtn">↺ Limpar respostas</button>
+      <button class="btn-print" type="button" onclick="window.print()">🖨 Imprimir / salvar em PDF</button>
+    </div>
+  </section>
+
+  <section class="results" id="resultados">
+    <div class="section-title">
+      <div><span class="part">Parte 3</span><h2>Seu desempenho</h2></div>
+      <p>Os dados abaixo são calculados automaticamente a partir das respostas marcadas.</p>
+    </div>
+    <div class="results-hero">
+      <div class="donut" id="donut"><div class="donut-center"><strong id="scorePct">0%</strong><span>acertos</span></div></div>
+      <div class="result-title"><h3 id="scoreText">0 de 18 questões corretas</h3><p id="scoreMessage">Responda ao questionário para obter seu diagnóstico.</p><div class="legend"><span><span class="dot blue-dot"></span>Acertos</span><span><span class="dot gray-dot"></span>Erros</span></div></div>
+    </div>
+
+    <div class="analysis-grid">
+      <article class="analysis-card">
+        <h3>Desempenho por conteúdo</h3>
+        <p>Compare seu percentual de acertos em cada assunto.</p>
+        <div class="bars" id="bars"></div>
+      </article>
+      <article class="analysis-card">
+        <h3>Facilidade e dificuldade</h3>
+        <p id="easeText">Após a correção, os conteúdos com maior e menor percentual aparecerão aqui.</p>
+        <div style="margin-top:15px;background:var(--green2);border-radius:14px;padding:14px"><strong style="color:var(--green)">Maior facilidade</strong><div id="easyList" style="margin-top:5px">—</div></div>
+        <div style="margin-top:10px;background:var(--red2);border-radius:14px;padding:14px"><strong style="color:var(--red)">Maior dificuldade</strong><div id="hardList" style="margin-top:5px">—</div></div>
+      </article>
+    </div>
+
+    <article class="study-box">
+      <h3>📌 Estudo orientado sugerido</h3>
+      <p style="margin:0;color:#4e5960">A orientação muda conforme os resultados. Priorize os assuntos com menor percentual de acertos, mantendo revisão rápida dos demais.</p>
+      <div class="study-list" id="studyList"></div>
+    </article>
+
+    <div class="ref-card">
+      <div><h3>Material de referência: aula anterior</h3><p>Use a revisão anterior de Língua Portuguesa como apoio para retomar conceitos e exemplos.</p></div>
+      <a class="ref-btn" href="https://samanta-preparatorios.github.io/Revisao-de-Portugues/" target="_blank" rel="noopener">Abrir aula anterior ↗</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title">
+      <div><span class="part">Parte 4</span><h2>Gabarito comentado</h2></div>
+      <p>Depois da correção, os comentários aparecem junto às questões acima, destacando o raciocínio necessário.</p>
+    </div>
+    <article class="topic highlight">
+      <h3>Como estudar a partir dos erros</h3>
+      <p>Não basta conferir a letra. Leia o comentário, volte ao conceito correspondente na Parte 1 e tente explicar com suas próprias palavras por que a alternativa correta funciona e por que as demais não funcionam. Esse procedimento ajuda a transformar o erro em revisão ativa.</p>
+    </article>
+  </section>
+
+  <section class="section">
+    <div class="section-title">
+      <div><span class="part">Parte 5</span><h2>Redação — Contos fantásticos</h2></div>
+      <p>Na proposta, escolha apenas uma das três situações e desenvolva seu conto.</p>
+    </div>
+    <div class="writing">
+      <span class="kicker">✍️ Proposta de produção textual</span>
+      <h3 style="font-size:1.6rem;margin:13px 0 5px">Escolha 1 situação e escreva um conto fantástico</h3>
+      <p style="margin:0;color:#4e5960">Construa uma narrativa com começo, desenvolvimento e desfecho. Inclua personagens, espaço, tempo, conflito e pelo menos um acontecimento extraordinário capaz de gerar estranhamento.</p>
+      <div class="writing-grid">
+        <article class="prompt"><h3>Situação 1 — A fotografia</h3><p>Ao revelar uma fotografia antiga encontrada em casa, uma personagem percebe que uma pessoa da imagem aparece cada vez mais perto a cada nova observação.</p></article>
+        <article class="prompt"><h3>Situação 2 — A sala 17</h3><p>Em uma escola, existe uma sala que oficialmente não está registrada. Certa manhã, uma estudante encontra a porta aberta e ouve alguém chamando seu nome.</p></article>
+        <article class="prompt"><h3>Situação 3 — O relógio</h3><p>Um relógio de família volta a funcionar depois de décadas parado. Todas as noites, exatamente às 3h13, ele marca um horário que ainda não aconteceu.</p></article>
+      </div>
+      <div class="checklist">
+        <div class="check">Apresente uma situação inicial reconhecível.</div>
+        <div class="check">Introduza o elemento estranho gradualmente.</div>
+        <div class="check">Construa suspense, mistério ou ambiguidade.</div>
+        <div class="check">Mantenha coerência entre personagens, fatos e espaço.</div>
+        <div class="check">Use parágrafos e pontuação para organizar a narrativa.</div>
+        <div class="check">Finalize explicando, mantendo ou ampliando a dúvida.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="contact-content">
+      <div>
+        <small>Fale com o professor</small>
+        <h3>Curso Preparatório Professora Samanta</h3>
+        <p>Professor responsável: <strong>Edvan Souza</strong>. Para dúvidas sobre Língua Portuguesa, interpretação, gramática ou produção textual, entre em contato pelo WhatsApp.</p>
+      </div>
+      <a class="contact-btn" href="https://wa.me/5581987461998" target="_blank" rel="noopener">💬 Entrar em contato via WhatsApp</a>
+    </div>
+  </section>
+
+  <footer>
+    <strong>Professora Samanta — Cursos Preparatórios</strong><br>
+    Língua Portuguesa e Redação · Material de apoio interativo · Referência visual baseada na aula anterior
+  </footer>
+</main>
+
+<script>
+(function(){
+  const cards=[...document.querySelectorAll('.q-card')];
+  const total=cards.length;
+  const answeredLabel=document.getElementById('answeredLabel');
+  const progressBar=document.getElementById('progressBar');
+  const resultados=document.getElementById('resultados');
+  const topics=[...new Set(cards.map(c=>c.dataset.topic))];
+
+  function updateProgress(){
+    const answered=cards.filter(c=>c.querySelector('input:checked')).length;
+    answeredLabel.textContent=`${answered} de ${total} questões respondidas`;
+    progressBar.style.width=`${Math.round(answered/total*100)}%`;
+  }
+  document.getElementById('quizForm').addEventListener('change',e=>{
+    if(e.target.matches('input[type=radio]')) updateProgress();
+  });
+
+  function labelJoin(items){
+    if(items.length===0) return '—';
+    if(items.length===1) return items[0];
+    if(items.length===2) return items.join(' e ');
+    return items.slice(0,-1).join(', ')+' e '+items.at(-1);
+  }
+
+  function grade(){
+    let answered=0, score=0;
+    const stats={};
+    topics.forEach(t=>stats[t]={total:0,correct:0});
+    cards.forEach((card)=>{
+      const selected=card.querySelector('input:checked');
+      const answer=card.dataset.answer;
+      const mark=card.querySelector('.answer-mark');
+      const comment=card.querySelector('.comment');
+      card.classList.remove('correct','incorrect','show');
+      stats[card.dataset.topic].total++;
+      comment.innerHTML=`<strong>Comentário:</strong> ${card.dataset.explanation}`;
+      if(selected){
+        answered++;
+        if(selected.value===answer){
+          score++; stats[card.dataset.topic].correct++;
+          card.classList.add('correct');
+          mark.innerHTML=`<span class="mark-ok">✓ Resposta correta</span>`;
+        }else{
+          card.classList.add('incorrect');
+          mark.innerHTML=`<span class="mark-no">✕ Resposta incorreta · Gabarito: ${answer}</span>`;
+        }
+      }else{
+        card.classList.add('incorrect');
+        mark.innerHTML=`<span class="mark-no">• Não respondida · Gabarito: ${answer}</span>`;
+      }
+      card.classList.add('show');
+    });
+
+    const pct=Math.round(score/total*100);
+    document.getElementById('scorePct').textContent=pct+'%';
+    document.getElementById('scoreText').textContent=`${score} de ${total} questões corretas`;
+    document.getElementById('donut').style.background=`conic-gradient(var(--blue) ${pct*3.6}deg,#e7edf0 0deg)`;
+    let msg='Revise os conceitos e refaça principalmente as questões que você errou.';
+    if(pct>=85) msg='Excelente domínio geral. Use os erros pontuais para consolidar detalhes e manter a revisão.';
+    else if(pct>=67) msg='Bom domínio, mas alguns conteúdos ainda precisam de reforço para ganhar segurança.';
+    else if(pct>=50) msg='Há uma base em construção. Priorize os conteúdos com menor percentual e volte aos exemplos.';
+    document.getElementById('scoreMessage').textContent=msg+` Você respondeu ${answered} de ${total} questões.`;
+
+    const bars=document.getElementById('bars'); bars.innerHTML='';
+    const arr=topics.map(t=>({topic:t,pct:Math.round(stats[t].correct/stats[t].total*100),correct:stats[t].correct,total:stats[t].total}))
+      .sort((a,b)=>a.pct-b.pct);
+    arr.forEach(x=>{
+      const row=document.createElement('div'); row.className='bar-row';
+      row.innerHTML=`<span>${x.topic}</span><span class="bar-track"><span class="bar-fill" style="width:${x.pct}%"></span></span><strong>${x.pct}%</strong>`;
+      bars.appendChild(row);
+    });
+
+    const max=Math.max(...arr.map(x=>x.pct));
+    const min=Math.min(...arr.map(x=>x.pct));
+    const easy=arr.filter(x=>x.pct===max).map(x=>x.topic);
+    const hard=arr.filter(x=>x.pct===min).map(x=>x.topic);
+    document.getElementById('easyList').textContent=labelJoin(easy)+` (${max}%)`;
+    document.getElementById('hardList').textContent=labelJoin(hard)+` (${min}%)`;
+    document.getElementById('easeText').textContent=`O maior percentual de acertos foi ${max}% e o menor foi ${min}%. Em caso de empate, todos os conteúdos do mesmo nível são considerados.`;
+
+    const study=document.getElementById('studyList'); study.innerHTML='';
+    const ordered=[...arr].sort((a,b)=>a.pct-b.pct);
+    ordered.forEach((x,i)=>{
+      const item=document.createElement('div'); item.className='study-item';
+      let text='Revisão rápida e refaça as questões do assunto.';
+      if(x.pct<=33) text='Prioridade alta: retome a revisão completa, observe a tabela/exemplo da Parte 1 e refaça as 3 questões sem consultar o gabarito.';
+      else if(x.pct<=66) text='Prioridade média: releia os conceitos principais e refaça pelo menos as questões média e difícil.';
+      else if(x.pct<100) text='Consolidação: revise os detalhes e explique o conteúdo com suas próprias palavras.';
+      else text='Manutenção: mantenha uma revisão breve e passe para conteúdos com menor percentual.';
+      item.innerHTML=`<div class="study-step">${i+1}</div><div><strong>${x.topic} — ${x.pct}%</strong>${text}</div>`;
+      study.appendChild(item);
+    });
+
+    resultados.classList.add('visible');
+    resultados.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+
+  document.getElementById('gradeBtn').addEventListener('click',grade);
+  document.getElementById('resetBtn').addEventListener('click',()=>{
+    document.getElementById('quizForm').reset();
+    cards.forEach(c=>{c.classList.remove('correct','incorrect','show'); c.querySelector('.answer-mark').innerHTML=''; c.querySelector('.comment').innerHTML='';});
+    resultados.classList.remove('visible');
+    updateProgress();
+    document.getElementById('questionario').scrollIntoView({behavior:'smooth',block:'start'});
+  });
+
+  updateProgress();
+})();
+</script>
+</body>
+</html>
